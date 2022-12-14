@@ -23,12 +23,9 @@ let shareData = {
   url: window.location.href,
 };
 
-const btn = document.querySelector("button");
-const resultPara = document.querySelector(".result");
-
 shareBtn.addEventListener("click", () => {
   navigator
     .share(shareData)
-    .then(() => (resultPara.textContent = "MDN shared successfully"))
-    .catch((e) => (resultPara.textContent = "Error: " + e));
+    .then(() => console.log("Shared success"))
+    .catch((e) => console.log(`Error: ${e}`));
 });
